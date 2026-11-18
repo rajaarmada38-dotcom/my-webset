@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT. Raja Armada - Rental Mobil </title>
+    <!-- Compiled Tailwind CSS -->
+    <link rel="stylesheet" href="./tailwind.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        .navy-gradient {
+            background: linear-gradient(135deg, #05070e 0%, #0f172a 50%, #1e293b 100%);
+        }
+        .hero-pattern {
+            background-image: radial-gradient(rgba(234, 179, 8, 0.15) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #ca8a04;
+            border-radius: 4px;
+        }
+
+        /* PT. Raja Armada: premium navy & gold visual refinements */
+        #beranda {
+            background: linear-gradient(125deg, #070b14 0%, #101a2d 52%, #17243a 100%);
+            isolation: isolate;
+        }
+        #beranda.hero-pattern {
+            background-image: radial-gradient(rgba(234, 179, 8, 0.10) 1px, transparent 1px),
+                              linear-gradient(125deg, #070b14 0%, #101a2d 52%, #17243a 100%);
+            background-size: 26px 26px, auto;
+            background-position: 0 0, center;
+        }
+        #beranda .ra-hero-overlay {
+            background: linear-gradient(90deg, rgba(3, 7, 18, 0.18), rgba(3, 7, 18, 0.04));
+            pointer-events: none;
+        }
+        header.sticky {
+            background-color: rgba(8, 13, 25, 0.97);
+            border-bottom-color: rgba(245, 185, 11, 0.28);
+        }
+        header a img[alt="Logo Raja Armada"] {
+            width: 4rem;
+            height: 4rem;
+            object-fit: contain;
+            display: block;
+        }
+        header a:has(img[alt="Logo Raja Armada"]) > div:first-child {
+            width: 4.75rem;
+            height: 4.75rem;
+            flex: 0 0 4.75rem;
+            border-radius: 1.1rem;
+        }
+        @media (max-width: 640px) {
+            header a:has(img[alt="Logo Raja Armada"]) > div:first-child {
+                width: 3.5rem;
+                height: 3.5rem;
+                flex-basis: 3.5rem;
+            }
+            header a img[alt="Logo Raja Armada"] {
+                width: 2.9rem;
+                height: 2.9rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- ================= 1. HEADER & NAVIGASI ================= -->
+    <!-- Topbar Contact -->
+    <div class="bg-slate-950 text-gray-300 text-xs py-2 px-4 border-b border-slate-800 hidden md:block">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-6">
+                <span><i class="fa-brands fa-whatsapp text-amber-400 mr-2"></i>WhatsApp 1: +628132018013</span>
+                <span><i class="fa-brands fa-whatsapp text-amber-400 mr-2"></i>WhatsApp 2: +6281214842657</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="#kontak" class="hover:text-amber-400 transition">Lokasi Kantor</a>
+                <span class="text-slate-700">|</span>
+                <a href="#faq" class="hover:text-amber-400 transition">Bantuan & FAQ</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="sticky top-0 z-40 bg-slate-900/95 backdrop-blur-md border-b border-amber-500/20 text-white shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-4 sm:gap-5 group">
+                    <div class="w-20 h-20 rounded-xl bg-gradient-to-tr from-amber-600 via-amber-400 to-amber-200 p-0.5 shadow-lg shadow-amber-500/20 group-hover:scale-105 transition duration-300">
+                        <div class="w-full h-full bg-slate-950 rounded-[20px] flex items-center justify-center">
+    <img src="./logo-raja-armada.png" alt="Logo Raja Armada" class="w-16 h-16 object-contain">
+</div>
+                    </div>
+                    <div>
+                        <span class="text-xl font-black tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-white via-amber-100 to-amber-400 block uppercase">
+                            RAJA ARMADA
+                        </span>
+                        <span class="text-[10px] tracking-widest text-amber-400 font-bold block -mt-1 uppercase">Rental Mobil</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden lg:flex items-center gap-7">
+                    <a href="#beranda" class="text-sm font-medium hover:text-amber-400 transition-colors py-1 border-b-2 border-transparent hover:border-amber-400">Beranda</a>
+                    <a href="#rental" class="text-sm font-medium hover:text-amber-400 transition-colors py-1 border-b-2 border-transparent hover:border-amber-400">Rental Mobil</a>
+                    <a href="#layanan" class="text-sm font-medium hover:text-amber-400 transition-colors py-1 border-b-2 border-transparent hover:border-amber-400">Layanan</a>
+                    <a href="#keunggulan" class="text-sm font-medium hover:text-amber-400 transition-colors py-1 border-b-2 border-transparent hover:border-amber-400">Keunggulan</a>
+                    <a href="#faq" class="text-sm font-medium hover:text-amber-400 transition-colors py-1 border-b-2 border-transparent hover:border-amber-400">FAQ</a>
+                </nav>
+
+                <!-- Quick Action Buttons -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="https://wa.me/+628132018013?text=Halo%20PT.%20Raja%20Armada,%20saya%20ingin%20informasi%20pemesanan." 
+                       target="_blank" 
+                       class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-xl shadow-lg hover:shadow-emerald-600/30 transition duration-300">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>WhatsApp Cepat</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-gray-300 hover:text-amber-400 focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-950 border-b border-amber-500/20 px-4 pt-2 pb-6 space-y-3">
+            <a href="#beranda" class="mobile-link block py-2 text-base font-medium text-gray-200 hover:text-amber-400">Beranda</a>
+            <a href="#rental" class="mobile-link block py-2 text-base font-medium text-gray-200 hover:text-amber-400">Rental Mobil</a>
+            <a href="#layanan" class="mobile-link block py-2 text-base font-medium text-gray-200 hover:text-amber-400">Layanan Layanan</a>
+            <a href="#keunggulan" class="mobile-link block py-2 text-base font-medium text-gray-200 hover:text-amber-400">Keunggulan</a>
+            <a href="#faq" class="mobile-link block py-2 text-base font-medium text-gray-200 hover:text-amber-400">FAQ</a>
+            <a href="#kontak" class="mobile-link block py-2 text-base font-medium text-gray-200 hover:text-amber-400">Kontak</a>
+            <div class="pt-2 grid grid-cols-2 gap-2">
+                <a href="tel:+6281234567890" class="flex items-center justify-center gap-2 bg-slate-800 text-white text-sm font-medium py-2.5 rounded-xl border border-slate-700">
+                    <i class="fa-solid fa-phone text-amber-400"></i> Call Center
+                </a>
+                <a href="https://wa.me/6281234567890" target="_blank" class="flex items-center justify-center gap-2 bg-emerald-600 text-white text-sm font-medium py-2.5 rounded-xl">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- ================= 2. HERO SECTION WITH DUAL TAB SELECTOR ================= -->
+        <section id="beranda" class="relative navy-gradient text-white py-12 lg:py-20 overflow-hidden hero-pattern">
+            <div class="absolute inset-0 ra-hero-overlay"></div>
+            
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    
+                    <!-- Hero Text -->
+                    <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-400/30 text-amber-300 text-xs sm:text-sm font-semibold tracking-wide uppercase">
+                            <i class="fa-solid fa-shield-halved text-amber-400"></i>
+                            Pilihan No.1 Sewa Mobil 
+                        </div>
+                        <h1 class="text-3xl sm:text-5xl lg:text-5xl font-black tracking-tight leading-tight text-white">
+                            Perjalanan Nyaman & Tepat Waktu Bersama <span class="bg-clip-text text-transparent bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500">PT. Raja Armada</span>
+                        </h1>
+                        <p class="text-gray-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                            Penyedia jasa rental mobil harian/bulanan (Lepas Kunci & Plus Driver) serta  dengan armada terbaru & terlengkap.
+                        </p>
+                        
+                        <!-- Badges -->
+                        <div class="pt-2 flex flex-wrap justify-center lg:justify-start gap-4 text-xs sm:text-sm font-medium text-gray-300">
+                            <div class="flex items-center gap-2 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700">
+                                <i class="fa-solid fa-house-chimney-user text-amber-400"></i>
+                                <span>Antar Depan Rumah</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700">
+                                <i class="fa-solid fa-user-check text-amber-400"></i>
+                                <span>Driver Professional</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700">
+                                <i class="fa-solid fa-tags text-amber-400"></i>
+                                <span>Harga All-in Transparan</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dual Booking Tab Card -->
+                    <div class="lg:col-span-6">
+                        <div class="bg-white rounded-3xl p-5 sm:p-7 text-slate-800 shadow-2xl border border-white/20">
+                            <form id="hero-rental-form" class="space-y-4">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Lokasi Penjemputan</label>
+                                        <div class="relative">
+                                            <i class="fa-solid fa-location-dot absolute left-3.5 top-3.5 text-amber-500"></i>
+                                            <select id="hero-rental-lokasi" class="w-full pl-10 pr-3 py-2.5 bg-gray-50 border border-gray-300 rounded-xl focus:ring-2 focus:ring-amber-500 text-xs sm:text-sm font-semibold">
+                                                <option value="Bandara / Airport">Bandara / Airport</option>
+                                                <option value="Stasiun Kereta">Stasiun Kereta</option>
+                                                <option value="Hotel / Penginapan">Hotel / Penginapan</option>
+                                                <option value="Alamat Rumah / Dalam Kota" selected>Alamat Rumah / Dalam Kota</option>
+                                                <option value="Luar Kota">Luar Kota</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Pilihan Mobil</label>
+                                        <div class="relative">
+                                            <i class="fa-solid fa-car absolute left-3.5 top-3.5 text-amber-500"></i>
+                                            <select id="hero-rental-mobil" class="w-full pl-10 pr-3 py-2.5 bg-gray-50 border border-gray-300 rounded-xl focus:ring-2 focus:ring-amber-500 text-xs sm:text-sm font-semibold">
+                                                <option value="">Memuat katalog mobil...</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Tanggal Sewa</label>
+                                        <input type="date" id="hero-rental-tgl" class="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-xl focus:ring-2 focus:ring-amber-500 text-xs sm:text-sm font-semibold">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Durasi (Hari)</label>
+                                        <input type="number" id="hero-rental-durasi" min="1" value="1" class="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-xl focus:ring-2 focus:ring-amber-500 text-xs sm:text-sm font-semibold">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Paket Layanan</label>
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <label class="flex items-center gap-2 p-2.5 border border-gray-200 rounded-xl bg-gray-50 cursor-pointer text-xs font-bold hover:border-amber-500">
+                                            <input type="radio" name="hero-rental-layanan" value="Dengan Supir" checked class="text-amber-500 focus:ring-amber-500">
+                                            <span>Dengan Supir</span>
+                                        </label>
+                                        <label class="flex items-center gap-2 p-2.5 border border-gray-200 rounded-xl bg-gray-50 cursor-pointer text-xs font-bold hover:border-amber-500">
+                                            <input type="radio" name="hero-rental-layanan" value="Lepas Kunci" class="text-amber-500 focus:ring-amber-500">
+                                            <span>Lepas Kunci</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <button type="button" onclick="submitHeroForm()" class="w-full mt-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-black py-3.5 px-6 rounded-xl shadow-lg shadow-amber-500/30 transition duration-300 flex items-center justify-center gap-2 text-sm uppercase tracking-wide">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <span>Cari & Pesan Mobil</span>
+                                </button>
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 3. LAYANAN UTAMA SECTION ================= -->
+        <section id="layanan" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-amber-600 font-extrabold tracking-wider uppercase text-xs sm:text-sm">Solusi Transportasi Terlengkap</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-1">Layanan Utama PT. Raja Armada</h2>
+                    <p class="text-gray-600 mt-3 text-sm sm:text-base">Kami melayani penyewaan mobil harian, bulanan, dan kebutuhan transportasi bisnis dengan armada terawat.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 group flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-600 flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition duration-300">
+                                <i class="fa-solid fa-car"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">Rental Mobil Harian / Bulanan</h3>
+                            <p class="text-gray-600 text-xs leading-relaxed mb-4">Pilihan lepas kunci untuk kebebasan berkendara atau plus supir berpengalaman untuk kenyamanan ekstra.</p>
+                        </div>
+                        <a href="#rental" class="text-xs font-bold text-amber-600 group-hover:text-amber-700 flex items-center gap-1">Lihat Mobil <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 group flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-600 flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition duration-300">
+                                <i class="fa-solid fa-bus"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">Sewa Bus & HiAce Pariwisata</h3>
+                            <p class="text-gray-600 text-xs leading-relaxed mb-4">Kebutuhan rombongan family gathering, studi tour, atau ziarah dengan HiAce Premio, Coaster, hingga Medium Bus.</p>
+                        </div>
+                        <button onclick="openBookingModal('custom')" class="text-xs font-bold text-amber-600 group-hover:text-amber-700 text-left flex items-center gap-1">Konsultasi Rombongan <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 group flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-600 flex items-center justify-center text-2xl font-bold mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition duration-300">
+                                <i class="fa-solid fa-gem"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">VIP Escort & Wedding Car</h3>
+                            <p class="text-gray-600 text-xs leading-relaxed mb-4">Layanan rental mobil pengantin (Alphard/Vellfire) serta penjemputan tamu VIP / pejabat instansi.</p>
+                        </div>
+                        <button onclick="openBookingModal('custom')" class="text-xs font-bold text-amber-600 group-hover:text-amber-700 text-left flex items-center gap-1">Sewa VIP <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= 4. KATALOG RENTAL MOBIL ================= -->
+        <section id="rental" class="py-20 bg-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Title -->
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-amber-600 font-extrabold tracking-wider uppercase text-xs sm:text-sm">Katalog Kendaraan</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-1">Armada Rental Mobil PT. Raja Armada</h2>
+                    <p class="text-gray-600 mt-2 text-sm">Unit terlengkap, bersih, wangi, dan selalu diservis rutin di bengkel resmi.</p>
+                </div>
+
+                <!-- Filter Category Buttons -->
+                <div class="flex flex-wrap justify-center gap-2 mb-10">
+                    <button class="filter-btn active-filter px-5 py-2.5 rounded-full text-xs font-bold transition-all duration-300 bg-slate-900 text-amber-400 shadow-md" data-category="Semua">
+                        Semua Armada
+                    </button>
+                    <button class="filter-btn px-5 py-2.5 rounded-full text-xs font-bold transition-all duration-300 bg-white text-gray-700 hover:bg-slate-200" data-category="MPV">
+                        MPV / Family
+                    </button>
+                    <button class="filter-btn px-5 py-2.5 rounded-full text-xs font-bold transition-all duration-300 bg-white text-gray-700 hover:bg-slate-200" data-category="SUV">
+                        SUV
+                    </button>
+                    <button class="filter-btn px-5 py-2.5 rounded-full text-xs font-bold transition-all duration-300 bg-white text-gray-700 hover:bg-slate-200" data-category="Luxury">
+                        Luxury / VIP
+                    </button>
+                    <button class="filter-btn px-5 py-2.5 rounded-full text-xs font-bold transition-all duration-300 bg-white text-gray-700 hover:bg-slate-200" data-category="Minibus">
+                        Minibus / HiAce
+                    </button>
+                </div>
+
+                <!-- Cars Grid -->
+                <div id="car-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Dynamic Javascript Rendering -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= 6. KEUNGGULAN PT. RAJA ARMADA ================= -->
+        <section id="keunggulan" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-amber-600 font-extrabold tracking-wider uppercase text-xs sm:text-sm">Alasan Memilih Kami</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-1">Keunggulan PT. Raja Armada</h2>
+                    <p class="text-gray-600 mt-2 text-sm">Jaminan keselamatan, kenyamanan, dan profesionalisme layanan di setiap kilometer perjalanan Anda.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="flex items-start gap-4 p-6 rounded-2xl bg-gray-50 border border-gray-100">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-xl shrink-0 shadow-md">
+                            <i class="fa-solid fa-car-on"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-base mb-1">Armada Terbaru & Terawat</h3>
+                            <p class="text-gray-600 text-xs leading-relaxed">Unit rutin servis berkala, AC dingin, sistem kebersihan standar pro, dan performa mesin senantiasa prima.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="flex items-start gap-4 p-6 rounded-2xl bg-gray-50 border border-gray-100">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-xl shrink-0 shadow-md">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-base mb-1">Driver Ramah & Profesional</h3>
+                            <p class="text-gray-600 text-xs leading-relaxed">Sopir terverifikasi resmi, paham rute jalan nasional/tol, mengemudi dengan tenang, serta mengutamakan etika.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="flex items-start gap-4 p-6 rounded-2xl bg-gray-50 border border-gray-100">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-xl shrink-0 shadow-md">
+                            <i class="fa-solid fa-stopwatch"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-base mb-1">Tepat Waktu & Aman</h3>
+                            <p class="text-gray-600 text-xs leading-relaxed">Jadwal keberangkatan tepat waktu dan rute terukur agar perjalanan Anda lebih terencana tanpa rasa khawatir.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 5 -->
+                    <div class="flex items-start gap-4 p-6 rounded-2xl bg-gray-50 border border-gray-100">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-xl shrink-0 shadow-md">
+                            <i class="fa-solid fa-receipt"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-base mb-1">Harga All-in & Transparan</h3>
+                            <p class="text-gray-600 text-xs leading-relaxed">Tidak ada biaya siluman. Seluruh rincian tarif tertulis transparan saat proses transaksi awal.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 6 -->
+                    <div class="flex items-start gap-4 p-6 rounded-2xl bg-gray-50 border border-gray-100">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-xl shrink-0 shadow-md">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-base mb-1">Customer Service 24/7</h3>
+                            <p class="text-gray-600 text-xs leading-relaxed">Tim admin kami senantiasa siap melayani pemesanan mendadak, konsultasi rute, maupun konfirmasi keberangkatan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 8. TESTIMONI & FAQ ================= -->
+        <section id="faq" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                
+                <!-- FAQ Accordion -->
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-10">
+                        <span class="text-amber-600 font-extrabold tracking-wider uppercase text-xs sm:text-sm">Pertanyaan Umum</span>
+                        <h2 class="text-3xl font-black text-slate-900 mt-1">FAQ (Frequently Asked Questions)</h2>
+                    </div>
+
+                    <div class="space-y-3" id="faq-accordion">
+                        <!-- FAQ 1 -->
+                        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                            <button class="faq-toggle w-full text-left p-4 sm:p-5 font-bold text-slate-900 text-xs sm:text-sm flex justify-between items-center focus:outline-none">
+                                <span>Apa saja syarat untuk sewa mobil Lepas Kunci?</span>
+                                <i class="fa-solid fa-chevron-down text-amber-500 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-5 pb-5 text-gray-600 text-xs leading-relaxed border-t border-gray-100 pt-3">
+                                Syarat sewa lepas kunci mencakup: e-KTP asli, SIM A aktif, bukti tempat tinggal/domisili, serta penjamin atau akun media sosial aktif untuk verifikasi cepat.
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                            <button class="faq-toggle w-full text-left p-4 sm:p-5 font-bold text-slate-900 text-xs sm:text-sm flex justify-between items-center focus:outline-none">
+                                <span>Bagaimana kebijakan pembatalan pemesanan rental?</span>
+                                <i class="fa-solid fa-chevron-down text-amber-500 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-5 pb-5 text-gray-600 text-xs leading-relaxed border-t border-gray-100 pt-3">
+                                Pembatalan hingga H-1 keberangkatan dapat dilakukan gratis atau pengembalian DP penuh. Pembatalan mendadak pada hari H dapat dikenakan potongan administrasi.
+                            </div>
+                        </div>
+
+                        <!-- FAQ 4 -->
+                        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                            <button class="faq-toggle w-full text-left p-4 sm:p-5 font-bold text-slate-900 text-xs sm:text-sm flex justify-between items-center focus:outline-none">
+                                <span>Apa saja metode pembayaran yang diterima?</span>
+                                <i class="fa-solid fa-chevron-down text-amber-500 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-content hidden px-5 pb-5 text-gray-600 text-xs leading-relaxed border-t border-gray-100 pt-3">
+                                Kami menerima Transfer Bank resmi PT. Raja Armada (BCA, Mandiri, BRI), QRIS, EDC Kartu Kredit, serta Tunai langsung kepada supir/kantor cabang.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= 7. DYNAMIC INTERACTIVE BOOKING MODAL ================= -->
+    <div id="booking-modal" class="fixed inset-0 bg-slate-950/80 z-50 flex items-center justify-center p-4 hidden backdrop-blur-sm transition-opacity duration-300">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-amber-500/30 custom-scrollbar">
+            
+            <!-- Modal Header -->
+            <div class="bg-slate-900 text-white p-6 rounded-t-3xl flex justify-between items-center sticky top-0 z-10 border-b border-slate-800">
+                <div>
+                    <h3 id="modal-type-title" class="text-lg font-black text-amber-400 uppercase tracking-wide">Pemesanan Online</h3>
+                    <p class="text-xs text-gray-300">PT. Raja Armada - Konfirmasi Kilat via WhatsApp</p>
+                </div>
+                <button id="close-modal" class="text-gray-400 hover:text-white p-2 text-xl font-bold">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Modal Dynamic Body Form -->
+            <form id="booking-modal-form" class="p-6 space-y-4">
+                <!-- Item Summary Header Card -->
+                <div id="modal-summary-box" class="bg-amber-50 p-4 rounded-2xl border border-amber-200 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xl shrink-0" id="modal-summary-icon">
+                        <i class="fa-solid fa-car"></i>
+                    </div>
+                    <div>
+                        <h4 id="modal-summary-title" class="font-extrabold text-slate-900 text-base">Toyota Avanza</h4>
+                        <p class="text-xs text-gray-600" id="modal-summary-subtitle">Tarif: Rp 350.000 / Hari</p>
+                    </div>
+                </div>
+
+                <!-- Shared User Input -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Nama Lengkap *</label>
+                        <input type="text" id="modal-user-nama" required placeholder="Contoh: Budi Santoso" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-amber-500 text-xs sm:text-sm font-semibold">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">No. WhatsApp / HP *</label>
+                        <input type="tel" id="modal-user-wa" required placeholder="Contoh: 08123456789" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-amber-500 text-xs sm:text-sm font-semibold">
+                    </div>
+                </div>
+
+                <!-- RENTAL MOBIL SPECIFIC FIELDS -->
+                <div id="modal-rental-fields" class="space-y-4">
+                    <div class="space-y-2">
+                        <label for="modal-rental-tujuan" class="block text-xs font-bold text-gray-700 uppercase">
+                            Tujuan Perjalanan *
+                        </label>
+                        <select id="modal-rental-tujuan" onchange="cekMinimalHari()" required class="w-full px-3.5 py-3 border border-gray-300 rounded-xl text-sm font-semibold">
+                            <option value="">Pilih Tujuan</option>
+                            <option value="Luar kota">Luar kota</option>
+                            <option value="Dalam kota">Dalam kota</option>
+
+                        </select>
+                        <p id="info-minimal-hari" class="text-xs font-bold text-amber-600" aria-live="polite">
+                            Silakan pilih tujuan perjalanan.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Paket Layanan *</label>
+                            <select id="modal-rental-layanan" onchange="recalculateModalTotal()" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-amber-500 text-xs sm:text-sm font-semibold">
+                                <option value="Dengan Supir">Dengan Supir</option>
+                                <option value="Lepas Kunci">Lepas Kunci</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Durasi Sewa (Hari) *</label>
+                            <input type="number" id="modal-rental-durasi" min="1" value="1" required oninput="cekMinimalHari()" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-amber-500 text-xs sm:text-sm font-semibold">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Tanggal Mulai Sewa *</label>
+                            <input type="date" id="modal-rental-tgl" required class="w-full px-3.5 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-amber-500 text-xs sm:text-sm font-semibold">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Jam Penjemputan *</label>
+                            <input type="time" id="modal-rental-jam" value="08:00" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-amber-500 text-xs sm:text-sm font-semibold">
+                        </div>
+                    </div>
+                </div>
+<!-- PERSYARATAN DOKUMEN -->
+<div class="border border-amber-300 bg-amber-50 rounded-2xl p-4 space-y-4">
+
+    <div>
+        <h3 class="font-extrabold text-slate-900">
+            <i class="fa-solid fa-id-card text-amber-500"></i>
+            Persyaratan Identitas Penyewa
+        </h3>
+
+        <p class="text-xs text-gray-600 mt-1">
+            Wajib melengkapi seluruh dokumen berikut sebelum pemesanan diproses.
+        </p>
+    </div>
+
+    <!-- KTP -->
+    <div>
+        <label class="block text-xs font-bold mb-2">
+            1. Foto KTP Penyewa *
+        </label>
+        <input type="file" id="dokumen-ktp"
+            accept="image/jpeg,image/png,image/webp"
+            required
+            class="w-full text-xs border bg-white rounded-lg p-2">
+    </div>
+
+    <!-- KK -->
+    <div>
+        <label class="block text-xs font-bold mb-2">
+            2. Foto Kartu Keluarga (KK) *
+        </label>
+        <input type="file" id="dokumen-kk"
+            accept="image/jpeg,image/png,image/webp"
+            required
+            class="w-full text-xs border bg-white rounded-lg p-2">
+    </div>
+
+    <!-- SIM -->
+    <div>
+        <label class="block text-xs font-bold mb-2">
+            3. Foto SIM A Penyewa *
+        </label>
+        <input type="file" id="dokumen-sim"
+            accept="image/jpeg,image/png,image/webp"
+            required
+            class="w-full text-xs border bg-white rounded-lg p-2">
+    </div>
+
+    <!-- SELFIE -->
+    <div>
+        <label class="block text-xs font-bold mb-2">
+            4. Foto Selfie Sambil Memegang KTP *
+        </label>
+        <input type="file" id="dokumen-selfie"
+            accept="image/jpeg,image/png,image/webp"
+            capture="user"
+            required
+            class="w-full text-xs border bg-white rounded-lg p-2">
+
+        <p class="text-xs text-gray-500 mt-1">
+            Pastikan wajah dan KTP terlihat jelas.
+        </p>
+    </div>
+
+    <p class="text-xs text-red-600 font-semibold">
+        * Seluruh dokumen wajib dilengkapi untuk pengajuan sewa lepas kunci.
+    </p>
+</div>
+
+                <div>
+                                    <label for="modal-alamat" class="block text-xs font-bold text-gray-700 uppercase mb-1">Alamat Penjemputan *</label>
+                                    <input type="text" id="modal-alamat" required placeholder="Masukkan alamat penjemputan" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-amber-500 text-xs sm:text-sm font-semibold">
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Catatan Tambahan (Opsional)</label>
+                    <textarea id="modal-catatan" rows="2" placeholder="Contoh: Bawa bagasi banyak, minta bangku depan, dll." class="w-full px-3.5 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-amber-500 text-xs sm:text-sm font-semibold"></textarea>
+                </div>
+
+                <!-- Dynamic Estimated Price Display -->
+                <div class="bg-slate-900 text-white p-4 rounded-2xl flex justify-between items-center">
+                    <div>
+                        <span class="text-xs text-gray-400 block font-semibold">Total Estimasi Biaya:</span>
+                        <span id="modal-calc-total" class="text-2xl font-black text-amber-400">Rp 0</span>
+                    </div>
+                    <span class="text-[10px] text-gray-400 text-right max-w-[140px]" id="modal-calc-note">Konfirmasi instan via CS</span>
+                </div>
+
+                <!-- Submit WhatsApp Button -->
+                <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-black py-3.5 px-6 rounded-xl shadow-lg transition duration-300 flex items-center justify-center gap-2 text-sm uppercase tracking-wide">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    <span>Kirim Pesanan ke WhatsApp CS</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ================= 10. COMPLEX FOOTER ================= -->
+    <footer id="kontak" class="bg-slate-950 text-gray-300 pt-16 pb-8 border-t border-amber-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500 flex items-center justify-center text-slate-950 font-black text-xl shadow-md">
+                            <i class="fa-solid fa-crown"></i>
+                        </div>
+                        <span class="text-xl font-black text-white tracking-wider">PT. RAJA ARMADA</span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Perusahaan jasa transportasi profesional terpercaya yang melayani rental mobil lepas kunci maupun dengan supir.
+                    </p>
+                    <div class="flex gap-3 text-amber-400 pt-2">
+                        <a href="https://www.instagram.com/raja_armada38" target="_blank" rel="noopener noreferrer"
+                         class="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-amber-500 hover:text-slate-950 transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/rajaarmada_rentcar" target="_blank" rel="noopener noreferrer"
+                         class="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-amber-500 hover:text-slate-950 transition"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Office Addresses -->
+                <div>
+                    <h4 class="text-sm font-black text-white mb-4 border-b border-slate-800 pb-2 uppercase tracking-wider">Kantor Pusat </h4>
+                    <ul class="space-y-3 text-xs">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-building text-amber-400 mt-0.5"></i>
+                            <span><strong>Kantor Pusat:</strong> Jl. Leuwinutung, Pananjung, Kec.Cangkuang,Kabupaten Bandung,Jawa Barat 40238</span>
+                        
+                    </ul>
+                </div>
+
+                <!-- Contacts & WhatsApp -->
+                <div>
+                    <h4 class="text-sm font-black text-white mb-4 border-b border-slate-800 pb-2 uppercase tracking-wider">Kontak & WhatsApp</h4>
+                    <ul class="space-y-3 text-xs">
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-brands fa-whatsapp text-amber-400"></i>
+                            <span>WhatsApp WA 1: +628132018013</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-brands fa-whatsapp text-amber-400"></i>
+                            <span>WhatsApp WA 2: +6281214842657</span>
+                        </li>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-envelope text-amber-400"></i>
+                            <span>info@rajaarmada38.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Fast Menu & Operations -->
+                <div>
+                    <h4 class="text-sm font-black text-white mb-4 border-b border-slate-800 pb-2 uppercase tracking-wider">Jam Operasional</h4>
+                    <p class="text-xs text-gray-400 mb-3">Layanan CS dan pemesanan rental mobil aktif 24 jam setiap hari.</p>
+                    <div class="bg-slate-900 p-3 rounded-xl border border-slate-800 text-xs space-y-1">
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Senin - Minggu:</span>
+                            <span class="text-amber-400 font-bold">24 Jam</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Copyright Line -->
+            <div class="border-t border-slate-800 pt-8 mt-8 text-center text-xs text-gray-500">
+                <p>&copy; 2026 PT. Raja Armada. All Rights Reserved. Layanan Rental Mobil Terpercaya.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= JAVASCRIPT LOGIC ================= -->
+    <script>
+        // Data Katalog Rental Mobil
+        const carsData = [
+            {
+                id: 'alphard',
+                name: ' Alphard',
+                category: 'MPV',
+                capacity: '7 Penumpang',
+                transmission: 'Manual / Automatic',
+                fuel: 'Bensin',
+                ac: 'Double Blower',
+                priceDriver: 2400000,
+                priceSelf: 2200000,
+                image: 'c:\\Users\\Win10\\Pictures\\alphard.jpg'
+            },
+            {
+                id: 'premio',
+                name: ' Premio',
+                category: 'MPV',
+                capacity: '7 Penumpang',
+                transmission: 'Manual / Automatic',
+                fuel: 'Bensin',
+                ac: 'Double Blower',
+                priceDriver: 1300000,
+                priceSelf: 110000,
+                image: 'c:\\Users\\Win10\\Pictures\\Premio.jpg'
+            },
+            {
+                id: 'euro-4',
+                name: ' Euro 4',
+                category: 'MPV',
+                capacity: '7 Penumpang',
+                transmission: 'Manual / Automatic',
+                fuel: 'Bensin',
+                ac: 'Double Blower',
+                priceDriver: 1100000,
+                priceSelf: 850000,
+                image: 'c:\\Users\\Win10\\Pictures\\euro 4.jpg'
+            },
+            {
+                id: 'commuter',
+                name: 'Commuter',
+                category: 'MPV',
+                capacity: '7 Penumpang',
+                transmission: 'Manual / Automatic',
+                fuel: 'Bensin',
+                ac: 'Double Blower',
+                priceDriver: 1000000,
+                priceSelf: 750000,
+                image: 'c:\\Users\\Win10\\Downloads\\commuter.jpeg'
+            },
+             {
+                id: 'camry',
+                name: 'Camry V Sunroof',
+                category: 'MPV',
+                capacity: '7 Penumpang',
+                transmission: 'Manual / Automatic',
+                fuel: 'Bensin',
+                ac: 'Double Blower',
+                priceDriver: 1500000,
+                priceSelf: 1200000,
+                image: 'c:\\Users\\Win10\\Pictures\\Camry.jpg'
+            },
+            {
+                id: 'reborn',
+                name: 'Rebon',
+                category: 'MPV',
+                capacity: '7 Penumpang',
+                transmission: 'Automatic / Manual',
+                fuel: 'Diesel / Bensin',
+                ac: 'Triple Zone AC',
+                priceDriver: 800000,
+                priceSelf: 600000,
+                image: 'c:\\Users\\Win10\\Pictures\\reborn.jpg'
+            },
+            {
+                id: 'avanza-at',
+                name: ' Avanza A/T',
+                category: 'MPV',
+                capacity: '7 Penumpang',
+                transmission: 'Automatic / Manual',
+                fuel: 'Diesel / Bensin',
+                ac: 'Triple Zone AC',
+                priceDriver: 700000,
+                priceSelf: 500000,
+                image: 'c:\\Users\\Win10\\Pictures\\avanza (2).jpg'
+            },
+            {
+                id: 'avanza-mt',
+                name: 'Avanza M/T',
+                category: 'MPV',
+                capacity: '7 Penumpang',
+                transmission: 'Automatic / Manual',
+                fuel: 'Diesel / Bensin',
+                ac: 'Triple Zone AC',
+                priceDriver: 600000,
+                priceSelf: 400000,
+                image: 'c:\\Users\\Win10\\Pictures\\avanza.jpg'
+            },
+            {
+                id: 'brio',
+                name: ' Brio',
+                category: 'MPV',
+                capacity: '7 Penumpang',
+                transmission: 'Automatic / Manual',
+                fuel: 'Diesel / Bensin',
+                ac: 'Triple Zone AC',
+                priceDriver: 600000,
+                priceSelf: 400000,
+                image: 'c:\\Users\\Win10\\Pictures\\brio.jpg'
+            },
+            {
+                id: 'zenix-g',
+                name: ' Zenix G Hybrid',
+                category: 'MPV',
+                capacity: '7 Penumpang',
+                transmission: 'Automatic / Manual',
+                fuel: 'Diesel / Bensin',
+                ac: 'Triple Zone AC',
+                priceDriver: 750000,
+                priceSelf: 950000,
+                image: 'c:\\Users\\Win10\\Pictures\\zenix g.jpg'
+            },
+            {
+                id: 'zenix-q',
+                name: 'Zenix Q Hybrid',
+                category: 'MPV',
+                capacity: '7 Penumpang',
+                transmission: 'Automatic / Manual',
+                fuel: 'Diesel / Bensin',
+                ac: 'Triple Zone AC',
+                priceDriver: 1300000,
+                priceSelf: 1100000,
+                image: 'c:\\Users\\Win10\\Pictures\\zenix q.jpg'
+            },
+            {
+                id: 'reborn-mt',
+                name: ' Rebon M/T',
+                category: 'MPV',
+                capacity: '7 Penumpang',
+                transmission: 'Automatic / Manual',
+                fuel: 'Diesel / Bensin',
+                ac: 'Triple Zone AC',
+                priceDriver: 750000,
+                priceSelf: 500000,
+                image: 'c:\\Users\\Win10\\Pictures\\rebron.jpg'
+            },
+            {
+                id: 'blandvand',
+                name: 'Blandvand',
+                category: 'MPV',
+                capacity: '7 Penumpang',
+                transmission: 'Automatic / Manual',
+                fuel: 'Diesel / Bensin',
+                ac: 'Triple Zone AC',
+                priceDriver: 700000,
+                priceSelf: 500000,
+                image: 'c:\\Users\\Win10\\Downloads\\blandvad.jpg'
+            },
+            {
+                id: 'hyundai',
+                name: 'Hyundai',
+                category: 'MPV',
+                capacity: '7 Penumpang',
+                transmission: 'Automatic / Manual',
+                fuel: 'Diesel / Bensin',
+                ac: 'Triple Zone AC',
+                priceDriver: 850000,
+                priceSelf: 650000,
+                image: 'c:\\Users\\Win10\\Pictures\\hyunday.jpg'
+            },
+            {
+                id: 'apv',
+                name: 'APV',
+                category: 'MPV',
+                capacity: '7 Penumpang',
+                transmission: 'Automatic / Manual',
+                fuel: 'Diesel / Bensin',
+                ac: 'Triple Zone AC',
+                priceDriver: 700000,
+                priceSelf: 500000,
+                image: 'c:\\Users\\Win10\\Downloads\\APV.jpeg'
+            },
+            {
+                id: 'yaris',
+                name: ' Yaris',
+                category: 'Hatchback',
+                capacity: '5 Penumpang',
+                transmission: 'Automatic / Manual',
+                fuel: 'Bensin',
+                ac: 'Triple Zone AC',
+                priceDriver: 750000,
+                priceSelf: 500000,
+                image: 'c:\\Users\\Win10\\Downloads\\Yaris.jpeg'
+            },
+            {
+                id: 'hrv',
+                name: 'HRV',
+                category: 'MPV',
+                capacity: '7 Penumpang',
+                transmission: 'CVT Automatic',
+                fuel: 'Hybrid System',
+                ac: 'Digital Climate Control',
+                priceDriver: 700000,
+                priceSelf: 650000,
+                image: 'c:\\Users\\Win10\\Downloads\\hrv.jpeg'
+            },
+            {
+                id: 'wuling-conferto-db',
+                name: 'Wuling Conferto DB',
+                category: 'MPV',
+                capacity: '7 Penumpang',
+                transmission: 'Automatic 4x2',
+                fuel: 'Diesel Pertamina Dex',
+                ac: 'Dual Zone Climate',
+                priceDriver: 550000,
+                priceSelf: 500000,
+                image: 'c:\\Users\\Win10\\Downloads\\Wuling.jpeg'
+            },
+            {
+                id: 'elf',
+                name: 'Elf',
+                category: 'Minibus',
+                capacity: '12 - 14 Penumpang',
+                transmission: 'Manual',
+                fuel: 'Diesel',
+                ac: 'Ducting Per Seat',
+                priceDriver: 1500000,
+                priceSelf: 0, // Hanya dengan driver
+                image: 'c:\\Users\\Win10\\Pictures\\elf.jpg'
+            }
+        ];
+
+        const heroCarSelect = document.getElementById('hero-rental-mobil');
+        heroCarSelect.innerHTML = '';
+        carsData.forEach(car => {
+            const option = document.createElement('option');
+            option.value = car.id;
+            option.textContent = `${car.name.trim()} - ${car.capacity} - ${formatRupiah(car.priceDriver)} / hari`;
+            heroCarSelect.appendChild(option);
+        });
+        heroCarSelect.value = 'avanza-at';
+
+        // Currency Formatter
+        function formatRupiah(num) {
+            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(num);
+        }
+
+        // Render Cars Catalog
+        function renderCars(categoryFilter = 'Semua') {
+            const grid = document.getElementById('car-grid');
+            grid.innerHTML = '';
+
+            const filtered = categoryFilter === 'Semua' 
+                ? carsData 
+                : carsData.filter(c => c.category === categoryFilter);
+
+            filtered.forEach(car => {
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200/80 flex flex-col justify-between hover:shadow-2xl transition duration-300";
+
+                card.innerHTML = `
+                    <div>
+                        <div class="relative h-48 bg-slate-950 overflow-hidden">
+                            <img src="${car.image}" alt="${car.name}" class="w-full h-full object-cover hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x400/0f2027/ffffff?text=${encodeURIComponent(car.name)}'">
+                            <span class="absolute top-3 left-3 bg-slate-900/80 text-amber-400 border border-amber-400/30 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-md">
+                                ${car.category}
+                            </span>
+                        </div>
+
+                        <div class="p-5">
+                            <h3 class="text-lg font-black text-slate-900 mb-3">${car.name}</h3>
+
+                            <div class="grid grid-cols-2 gap-2 text-[11px] text-gray-600 mb-4 bg-gray-50 p-3 rounded-xl border border-gray-100 font-medium">
+                                <div class="flex items-center gap-1.5"><i class="fa-solid fa-users text-amber-500"></i> ${car.capacity}</div>
+                                <div class="flex items-center gap-1.5"><i class="fa-solid fa-gears text-amber-500"></i> ${car.transmission}</div>
+                                <div class="flex items-center gap-1.5"><i class="fa-solid fa-gas-pump text-amber-500"></i> ${car.fuel}</div>
+                                <div class="flex items-center gap-1.5"><i class="fa-solid fa-snowflake text-amber-500"></i> ${car.ac}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="px-5 pb-5 pt-0">
+                        <div class="border-t border-gray-100 pt-3 mb-4 space-y-1">
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="text-gray-500">Dengan Supir:</span>
+                                <span class="font-extrabold text-slate-900">${formatRupiah(car.priceDriver)} / hr</span>
+                            </div>
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="text-gray-500">Lepas Kunci:</span>
+                                <span class="font-bold text-amber-600">${car.priceSelf > 0 ? formatRupiah(car.priceSelf) + ' / hr' : 'N/A (+Supir)'}</span>
+                            </div>
+                        </div>
+
+                        <button onclick="openBookingModal('${car.id}')" class="w-full bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-amber-400 font-extrabold py-2.5 rounded-xl transition duration-300 text-xs flex items-center justify-center gap-2 uppercase tracking-wide">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            <span>Sewa Mobil Ini</span>
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Interactive Modal Logic
+        const modal = document.getElementById('booking-modal');
+        const closeModalBtn = document.getElementById('close-modal');
+        let currentModalTargetData = null;
+
+        function openBookingModal(itemId) {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('modal-type-title').innerText = "Pemesanan Rental Mobil";
+            document.getElementById('modal-rental-tgl').value = today;
+            document.getElementById('modal-rental-tujuan').value = '';
+            document.getElementById('modal-rental-durasi').value = 1;
+
+            currentModalTargetData = carsData.find(c => c.id === itemId) || carsData[0];
+            cekMinimalHari();
+
+            document.getElementById('modal-summary-icon').innerHTML = `<i class="fa-solid fa-car"></i>`;
+            document.getElementById('modal-summary-title').innerText = currentModalTargetData.name;
+            document.getElementById('modal-summary-subtitle').innerText = `Dgn Driver: ${formatRupiah(currentModalTargetData.priceDriver)} | Lepas Kunci: ${currentModalTargetData.priceSelf ? formatRupiah(currentModalTargetData.priceSelf) : 'N/A'}`;
+
+            recalculateModalTotal();
+            modal.classList.remove('hidden');
+        }
+
+        function recalculateModalTotal() {
+            if (!currentModalTargetData) {
+                return;
+            }
+
+            const durasi = parseInt(document.getElementById('modal-rental-durasi').value) || 1;
+            const layanan = document.getElementById('modal-rental-layanan').value;
+            let rate = currentModalTargetData.priceDriver;
+            if (layanan === 'Lepas Kunci' && currentModalTargetData.priceSelf > 0) {
+                rate = currentModalTargetData.priceSelf;
+            }
+
+            const total = rate * durasi;
+            document.getElementById('modal-calc-note').innerText = "Belum termasuk BBM/Tol jika +Driver";
+            document.getElementById('modal-calc-total').innerText = formatRupiah(total);
+        }
+
+        closeModalBtn.addEventListener('click', () => modal.classList.add('hidden'));
+        modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.add('hidden'); });
+
+        // Submit Booking Form to WhatsApp
+        document.getElementById('booking-modal-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const nama = document.getElementById('modal-user-nama').value;
+            const wa = document.getElementById('modal-user-wa').value;
+            const alamat = document.getElementById('modal-alamat').value;
+            const catatan = document.getElementById('modal-catatan').value;
+            const totalEst = document.getElementById('modal-calc-total').innerText;
+
+    const layanan = document.getElementById('modal-rental-layanan').value;
+    const durasi = document.getElementById('modal-rental-durasi').value;
+    const tgl = document.getElementById('modal-rental-tgl').value;
+    const jam = document.getElementById('modal-rental-jam').value;
+    const tujuan = document.getElementById('modal-rental-tujuan').value;
+
+    const textWA = `*PEMESANAN RENTAL MOBIL - PT. RAJA ARMADA*%0A%0A` +
+                   `*Data Pemesan:*%0A` +
+                   `- Nama: ${encodeURIComponent(nama)}%0A` +
+                   `- No WA: ${encodeURIComponent(wa)}%0A%0A` +
+                   `*Detail Rental:*%0A` +
+                   `- Mobil: ${encodeURIComponent(currentModalTargetData.name)}%0A` +
+                   `- Paket: ${encodeURIComponent(layanan)}%0A` +
+                   `- Tujuan: ${encodeURIComponent(tujuan)}%0A` +
+                   `- Tanggal: ${encodeURIComponent(tgl)} (Jam: ${encodeURIComponent(jam)})%0A` +
+                   `- Durasi: ${encodeURIComponent(durasi)} Hari%0A` +
+                   `- Lokasi Penjemputan: ${encodeURIComponent(alamat)}%0A` +
+                   `- Catatan: ${encodeURIComponent(catatan || '-')}%0A%0A` +
+                   `*Total Estimasi:* ${encodeURIComponent(totalEst)}%0A%0A` +
+                   `Mohon diproses untuk ketersediaan unit. Terima kasih.`;
+    window.open(`https://wa.me/628132018013?text=${textWA}`, '_blank');
+    modal.classList.add('hidden');
+});
+
+// Hero Search Submit Handler
+function submitHeroForm() {
+    const selectedCarId = document.getElementById('hero-rental-mobil').value;
+    openBookingModal(selectedCarId);
+
+    document.getElementById('modal-rental-tgl').value = document.getElementById('hero-rental-tgl').value;
+    document.getElementById('modal-rental-durasi').value = document.getElementById('hero-rental-durasi').value;
+
+    const selectedService = document.querySelector('input[name="hero-rental-layanan"]:checked');
+    if (selectedService) {
+        document.getElementById('modal-rental-layanan').value = selectedService.value;
+    }
+
+    recalculateModalTotal();
+}
+
+        // Filter Category Buttons Event
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('bg-slate-900', 'text-amber-400', 'shadow-md');
+                    b.classList.add('bg-white', 'text-gray-700');
+                });
+                this.classList.remove('bg-white', 'text-gray-700');
+                this.classList.add('bg-slate-900', 'text-amber-400', 'shadow-md');
+                renderCars(this.getAttribute('data-category'));
+            });
+        });
+
+        // FAQ Accordion Toggle
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Mobile Menu Drawer Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        document.querySelectorAll('.mobile-link').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+        // Initial Load Page
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCars();
+
+            // Set the default rental date
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('hero-rental-tgl').value = today;
+        });
+
+// ATURAN MINIMAL HARI SEWA
+const minimalSewa = {
+    "Luar kota": 8,
+    "Dalam kota": 8
+};
+
+const tujuan = document.getElementById("modal-rental-tujuan");
+const durasi = document.getElementById("modal-rental-durasi");
+const info = document.getElementById("info-minimal-hari");
+
+function cekMinimalHari() {
+    const kota = tujuan.value;
+    const minimal = minimalSewa[kota] || 8;
+    durasi.min = 1;
+
+    if (!kota) {
+        info.textContent = "Pilih tujuan untuk melihat minimal hari sewa.";
+    } else {
+        info.textContent = "Minimal sewa " + kota + " adalah " + minimal + " hari.";
+    }
+
+    if (currentModalTargetData) {
+        recalculateModalTotal();
+    }
+}
+// KODE JAVASCRIPT TERAKHIR
+
+</script>
+
+</body>
+</html>
